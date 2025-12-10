@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weskley Gomes | Soluções Digitais</title>
+    <meta name="description" content="Transformo seu negócio com sites de alta conversão e sistemas inteligentes." />
+    
+    <!-- Google Fonts: Orbitron for headers, Rajdhani for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                purple: '#7c3aed',
+                light: '#a78bfa',
+                dark: '#4c1d95',
+                accent: '#8b5cf6'
+              },
+              tech: {
+                silver: '#f1f5f9',
+                slate: '#334155',
+                dark: '#0f172a'
+              }
+            },
+            fontFamily: {
+              sans: ['Rajdhani', 'sans-serif'],
+              display: ['Orbitron', 'sans-serif'],
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'glow': 'glow 3s ease-in-out infinite alternate',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-15px)' },
+              },
+              glow: {
+                'from': { boxShadow: '0 4px 20px rgba(124, 58, 237, 0.1)' },
+                'to': { boxShadow: '0 4px 30px rgba(124, 58, 237, 0.4)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #f8fafc;
+        color: #1e293b;
+        overflow-x: hidden;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f5f9;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #c4b5fd;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #7c3aed;
+      }
+      
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+      }
+
+      .text-gradient {
+        background: linear-gradient(to right, #4c1d95, #7c3aed);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.1",
+    "react-dom/client": "https://esm.sh/react-dom@^19.2.1/client",
+    "react-dom": "https://esm.sh/react-dom@^19.2.1",
+    "framer-motion": "https://esm.sh/framer-motion@^12.23.26",
+    "react/": "https://esm.sh/react@^19.2.1/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.559.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.1/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+  </body>
+</html>
