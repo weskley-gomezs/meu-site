@@ -109,7 +109,7 @@ const Navbar: React.FC = () => {
             <div className="hidden md:block">
               <button 
                   onClick={() => scrollToSection('contact')}
-                  className="bg-brand-dark text-white text-xs font-bold px-5 py-2.5 rounded-full hover:bg-brand-purple transition-colors shadow-lg shadow-brand-purple/20"
+                  className="bg-brand-dark text-white text-xs font-bold px-5 py-2.5 rounded-full hover:bg-brand-purple transition-colors btn-glow-loop"
                   data-hover="true"
               >
                 FALE COMIGO
@@ -149,7 +149,7 @@ const Navbar: React.FC = () => {
             ))}
             <button 
                 onClick={() => scrollToSection('contact')}
-                className="mt-8 bg-brand-purple text-white text-lg font-bold px-8 py-4 rounded-full shadow-xl"
+                className="mt-8 bg-brand-purple text-white text-lg font-bold px-8 py-4 rounded-full shadow-xl btn-glow-loop"
             >
               FALE COMIGO
             </button>

@@ -101,8 +101,8 @@ const Services: React.FC = () => {
                 className={`
                   w-full py-4 rounded-lg font-bold uppercase tracking-wide flex items-center justify-center gap-2 transition-all duration-300 transform active:scale-95
                   ${service.highlight 
-                    ? 'bg-brand-purple text-white hover:bg-brand-dark shadow-lg shadow-brand-purple/30 hover:shadow-brand-purple/50 hover:-translate-y-1' 
-                    : 'bg-gray-50 dark:bg-gray-800 text-brand-dark dark:text-white border border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-700 hover:border-brand-purple dark:hover:border-brand-light hover:text-brand-purple dark:hover:text-brand-light hover:shadow-lg hover:-translate-y-1'
+                    ? 'bg-brand-purple text-white hover:bg-brand-dark hover:-translate-y-1 btn-glow-loop' 
+                    : 'bg-gray-50 dark:bg-gray-800 text-brand-dark dark:text-white border border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-700 hover:border-brand-purple dark:hover:border-brand-light hover:text-brand-purple dark:hover:text-brand-light hover:-translate-y-1 btn-border-pulse'
                   }
                 `}
               >

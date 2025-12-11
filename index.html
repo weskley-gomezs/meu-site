@@ -103,6 +103,35 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
+
+      /* Button Loop Animations */
+      @keyframes borderPulse {
+        0% { border-color: rgba(124, 58, 237, 0.2); box-shadow: 0 0 0 0 rgba(124, 58, 237, 0); }
+        50% { border-color: rgba(124, 58, 237, 0.8); box-shadow: 0 0 8px 0 rgba(124, 58, 237, 0.3); }
+        100% { border-color: rgba(124, 58, 237, 0.2); box-shadow: 0 0 0 0 rgba(124, 58, 237, 0); }
+      }
+      .btn-border-pulse {
+        animation: borderPulse 3s infinite ease-in-out;
+      }
+      
+      @keyframes glowLoop {
+        0% { box-shadow: 0 4px 6px -1px rgba(124, 58, 237, 0.2), 0 2px 4px -1px rgba(124, 58, 237, 0.1); }
+        50% { box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.6), 0 8px 10px -6px rgba(124, 58, 237, 0.4); }
+        100% { box-shadow: 0 4px 6px -1px rgba(124, 58, 237, 0.2), 0 2px 4px -1px rgba(124, 58, 237, 0.1); }
+      }
+      .btn-glow-loop {
+        animation: glowLoop 3s infinite ease-in-out;
+      }
+
+      @keyframes iconPulse {
+        0% { opacity: 0.8; transform: scale(1); box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); }
+        50% { opacity: 1; transform: scale(1.05); box-shadow: 0 0 10px 0 rgba(139, 92, 246, 0.3); }
+        100% { opacity: 0.8; transform: scale(1); box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); }
+      }
+      .icon-pulse-loop {
+        animation: iconPulse 4s infinite ease-in-out;
+      }
+
     </style>
   <script type="importmap">
 {

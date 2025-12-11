@@ -94,7 +94,7 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
                         href={project.link} 
                         target="_blank" 
                         rel="noreferrer" 
-                        className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-gray-50 dark:bg-gray-800 text-brand-dark dark:text-white text-xs font-bold rounded-lg hover:bg-brand-dark hover:text-white transition-all group-hover:shadow-lg border border-gray-200 dark:border-gray-700 hover:border-transparent"
+                        className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-gray-50 dark:bg-gray-800 text-brand-dark dark:text-white text-xs font-bold rounded-lg hover:bg-brand-dark hover:text-white transition-all group-hover:shadow-lg border border-gray-200 dark:border-gray-700 hover:border-transparent btn-border-pulse"
                         data-hover="true"
                     >
                         <ExternalLink size={14} /> Visitar Projeto

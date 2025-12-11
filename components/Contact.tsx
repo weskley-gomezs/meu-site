@@ -51,7 +51,7 @@ const Contact: React.FC = () => {
                 rel="noreferrer"
                 whileHover={{ scale: 1.1, rotate: 3 }}
                 whileTap={{ scale: 0.95 }}
-                className="p-4 bg-white/10 backdrop-blur-md border border-white/10 rounded-full text-white hover:bg-white hover:text-brand-purple transition-all"
+                className="p-4 bg-white/10 backdrop-blur-md border border-white/10 rounded-full text-white hover:bg-white hover:text-brand-purple transition-all icon-pulse-loop"
                 onMouseEnter={() => setRobotState('excited')}
                 onMouseLeave={() => setRobotState('idle')}
                 data-hover="true"

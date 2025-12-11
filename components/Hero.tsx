@@ -70,7 +70,7 @@ const Hero: React.FC = () => {
               rel="noopener noreferrer"
               onMouseEnter={() => setRobotState('excited')}
               onMouseLeave={() => setRobotState('idle')}
-              className="group relative px-8 py-4 bg-brand-purple text-white font-bold rounded-lg shadow-lg shadow-brand-purple/30 overflow-hidden hover:shadow-brand-purple/50 transition-all transform hover:-translate-y-1"
+              className="group relative px-8 py-4 bg-brand-purple text-white font-bold rounded-lg overflow-hidden transition-all transform hover:-translate-y-1 btn-glow-loop"
               data-hover="true"
             >
               <span className="relative z-10 flex items-center gap-2">
@@ -83,7 +83,7 @@ const Hero: React.FC = () => {
               onClick={handleScrollToProjects}
               onMouseEnter={() => setRobotState('pointing')}
               onMouseLeave={() => setRobotState('idle')}
-              className="px-8 py-4 bg-white dark:bg-transparent border border-gray-200 dark:border-gray-700 text-brand-dark dark:text-white font-bold rounded-lg hover:border-brand-purple hover:text-brand-purple dark:hover:border-brand-light dark:hover:text-brand-light transition-all shadow-sm hover:shadow-md flex items-center gap-2"
+              className="px-8 py-4 bg-white dark:bg-transparent border border-gray-200 dark:border-gray-700 text-brand-dark dark:text-white font-bold rounded-lg hover:border-brand-purple hover:text-brand-purple dark:hover:border-brand-light dark:hover:text-brand-light transition-all flex items-center gap-2 btn-border-pulse"
               data-hover="true"
             >
               Ver Portfolio <ArrowRight size={18} />
