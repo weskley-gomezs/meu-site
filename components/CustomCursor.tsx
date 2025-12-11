@@ -29,7 +29,7 @@ const CustomCursor: React.FC = () => {
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 w-4 h-4 rounded-full bg-brand-purple pointer-events-none z-[9999]"
+        className="hidden md:block fixed top-0 left-0 w-4 h-4 rounded-full bg-brand-purple pointer-events-none z-[9999]"
         animate={{
           x: mousePosition.x - 8,
           y: mousePosition.y - 8,
@@ -38,7 +38,7 @@ const CustomCursor: React.FC = () => {
         transition={{ type: "tween", ease: "backOut", duration: 0.1 }}
       />
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 rounded-full border border-brand-light pointer-events-none z-[9998]"
+        className="hidden md:block fixed top-0 left-0 w-8 h-8 rounded-full border border-brand-light pointer-events-none z-[9998]"
         animate={{
           x: mousePosition.x - 16,
           y: mousePosition.y - 16,
