@@ -167,15 +167,6 @@ const Projects: React.FC = () => {
                     Projetos reais, resultados reais.
                 </p>
             </div>
-            
-            <a 
-                href="https://github.com/weskley-gomezs" 
-                target="_blank" 
-                rel="noreferrer"
-                className="text-xs font-bold text-brand-purple flex items-center gap-1 hover:underline"
-            >
-                Ver tudo no GitHub <ArrowRight size={12} />
-            </a>
         </div>
         
         {/* Grid Layout - Compact */}
