@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Monitor, ShoppingBag, Database, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Monitor, Rocket, Database, CheckCircle2, ArrowRight } from 'lucide-react';
 import { useRobot } from '../App';
 
 const Services: React.FC = () => {
@@ -8,17 +8,21 @@ const Services: React.FC = () => {
 
   const services = [
     {
-      title: "E-commerce",
-      subtitle: "Loja Virtual Completa",
-      price: "R$ 1.497",
-      icon: <ShoppingBag size={32} />,
-      features: ["Catálogo Ilimitado", "Integração Pagamentos", "Cálculo de Frete", "Painel de Pedidos"],
+      title: "Landing Page",
+      subtitle: "Foco em Vendas Rápida",
+      price: "R$ 497",
+      type: "Taxa Única",
+      maintenance: "+ R$ 99/mês (Atualizações)",
+      icon: <Rocket size={32} />,
+      features: ["Página Única (One Page)", "Alta Conversão", "Design Persuasivo", "Carregamento Instantâneo"],
       highlight: false
     },
     {
       title: "Site Profissional",
       subtitle: "Institucional & Autoridade",
-      price: "R$ 697",
+      price: "R$ 897",
+      type: "Taxa Única",
+      maintenance: "+ R$ 197/mês (Atualizações)",
       icon: <Monitor size={32} />,
       features: ["Até 5 Páginas", "Design Premium", "Otimizado para Google (SEO)", "Botão WhatsApp Fixo"],
       highlight: true
@@ -27,6 +31,8 @@ const Services: React.FC = () => {
       title: "Sistema Personalizado",
       subtitle: "Automação & Gestão",
       price: "Sob Consulta",
+      type: "Projeto Especial",
+      maintenance: "Suporte Dedicado",
       icon: <Database size={32} />,
       features: ["Painel Administrativo", "Gestão de Clientes", "Automação com IA", "Solução Sob Medida"],
       highlight: false
@@ -47,7 +53,7 @@ const Services: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
           {services.map((service, idx) => (
             <motion.div
               key={idx}
@@ -57,7 +63,7 @@ const Services: React.FC = () => {
               transition={{ delay: idx * 0.2 }}
               onMouseEnter={() => setRobotState('excited')}
               onMouseLeave={() => setRobotState('idle')}
-              className={`relative bg-white dark:bg-gray-900 rounded-2xl p-8 transition-all duration-300 group ${
+              className={`flex flex-col relative bg-white dark:bg-gray-900 rounded-2xl p-8 transition-all duration-300 group ${
                 service.highlight 
                   ? 'border-2 border-brand-purple shadow-2xl shadow-brand-purple/20 scale-105 z-10' 
                   : 'border border-gray-100 dark:border-gray-800 shadow-xl hover:shadow-2xl hover:-translate-y-2'
@@ -65,7 +71,7 @@ const Services: React.FC = () => {
               data-hover="true"
             >
               {service.highlight && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-purple text-white px-4 py-1 rounded-full text-sm font-bold tracking-wide">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-purple text-white px-4 py-1 rounded-full text-sm font-bold tracking-wide shadow-lg">
                   MAIS POPULAR
                 </div>
               )}
@@ -81,11 +87,21 @@ const Services: React.FC = () => {
               <h3 className="text-2xl font-display font-bold text-gray-900 dark:text-white">{service.title}</h3>
               <p className="text-gray-500 dark:text-gray-400 mb-6 font-medium">{service.subtitle}</p>
               
-              <div className="text-4xl font-black text-brand-dark dark:text-white mb-8 tracking-tight">
-                {service.price}
+              <div className="mb-6">
+                <div className="flex items-baseline gap-1">
+                  <span className="text-4xl font-black text-brand-dark dark:text-white tracking-tight">
+                    {service.price}
+                  </span>
+                  <span className="text-sm font-bold text-gray-400 dark:text-gray-500 uppercase">
+                    / {service.type}
+                  </span>
+                </div>
+                <div className="text-sm font-semibold text-brand-purple dark:text-brand-light mt-1 bg-brand-purple/5 dark:bg-brand-purple/10 inline-block px-2 py-1 rounded">
+                   {service.maintenance}
+                </div>
               </div>
               
-              <ul className="space-y-4 mb-8">
+              <ul className="space-y-4 mb-8 flex-grow">
                 {service.features.map((feature, i) => (
                   <li key={i} className="flex items-center text-gray-600 dark:text-gray-300">
                     <CheckCircle2 size={18} className={`mr-3 flex-shrink-0 transition-colors ${service.highlight ? 'text-green-500' : 'text-gray-400 dark:text-gray-600 group-hover:text-green-500'}`} />
@@ -99,7 +115,7 @@ const Services: React.FC = () => {
                 target="_blank"
                 rel="noreferrer"
                 className={`
-                  w-full py-4 rounded-lg font-bold uppercase tracking-wide flex items-center justify-center gap-2 transition-all duration-300 transform active:scale-95
+                  w-full py-4 rounded-lg font-bold uppercase tracking-wide flex items-center justify-center gap-2 transition-all duration-300 transform active:scale-95 mt-auto
                   ${service.highlight 
                     ? 'bg-brand-purple text-white hover:bg-brand-dark hover:-translate-y-1 btn-glow-loop' 
                     : 'bg-gray-50 dark:bg-gray-800 text-brand-dark dark:text-white border border-gray-200 dark:border-gray-700 hover:bg-white dark:hover:bg-gray-700 hover:border-brand-purple dark:hover:border-brand-light hover:text-brand-purple dark:hover:text-brand-light hover:-translate-y-1 btn-border-pulse'
