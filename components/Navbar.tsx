@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTheme } from '../App';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,12 +58,12 @@ const Navbar: React.FC = () => {
           pointer-events-auto
           flex items-center justify-between
           px-6 py-3 md:px-8 md:py-4
-          bg-white/70 backdrop-blur-xl
-          border border-white/50
-          shadow-lg shadow-black/5
+          bg-white/70 dark:bg-gray-900/70 backdrop-blur-xl
+          border border-white/50 dark:border-white/10
+          shadow-lg shadow-black/5 dark:shadow-black/20
           rounded-full
           transition-all duration-300
-          ${isScrolled ? 'w-[95%] md:w-auto gap-4 md:gap-12 scale-100' : 'w-[95%] md:w-auto gap-8 md:gap-16 scale-105'}
+          ${isScrolled ? 'w-[95%] md:w-auto gap-4 md:gap-8 scale-100' : 'w-[95%] md:w-auto gap-4 md:gap-12 scale-105'}
         `}>
           
           {/* Logo */}
@@ -69,7 +71,7 @@ const Navbar: React.FC = () => {
             className="text-2xl font-display font-black tracking-tighter cursor-pointer group flex-shrink-0"
             onClick={() => scrollToSection('home')}
           >
-            <span className="text-brand-dark group-hover:text-brand-purple transition-colors">W</span>
+            <span className="text-brand-dark dark:text-white group-hover:text-brand-purple transition-colors">W</span>
             <span className="text-brand-purple">G</span>
             <span className="text-brand-accent">.</span>
           </div>
@@ -84,8 +86,8 @@ const Navbar: React.FC = () => {
                 className={`
                   relative px-4 py-2 rounded-full font-sans font-medium text-sm tracking-wide transition-all duration-300
                   ${activeSection === item.id 
-                    ? 'text-brand-purple bg-brand-purple/10' 
-                    : 'text-gray-600 hover:text-brand-purple hover:bg-gray-100'}
+                    ? 'text-brand-purple bg-brand-purple/10 dark:bg-brand-purple/20' 
+                    : 'text-gray-600 dark:text-gray-300 hover:text-brand-purple dark:hover:text-brand-light hover:bg-gray-100 dark:hover:bg-white/5'}
                 `}
               >
                 {item.name}
@@ -93,25 +95,36 @@ const Navbar: React.FC = () => {
             ))}
           </div>
 
-          {/* CTA Button (Desktop) */}
-          <div className="hidden md:block">
-             <button 
-                onClick={() => scrollToSection('contact')}
-                className="bg-brand-dark text-white text-xs font-bold px-5 py-2.5 rounded-full hover:bg-brand-purple transition-colors shadow-lg shadow-brand-purple/20"
-                data-hover="true"
+          <div className="flex items-center gap-3">
+             {/* Theme Toggle */}
+             <button
+              onClick={toggleTheme}
+              className="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10 transition-colors pointer-events-auto"
+              data-hover="true"
              >
-               FALE COMIGO
+               {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
              </button>
-          </div>
 
-          {/* Mobile Toggle */}
-          <div className="md:hidden flex items-center">
-            <button 
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
-              className="text-brand-dark p-1 bg-gray-100 rounded-full"
-            >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            {/* CTA Button (Desktop) */}
+            <div className="hidden md:block">
+              <button 
+                  onClick={() => scrollToSection('contact')}
+                  className="bg-brand-dark text-white text-xs font-bold px-5 py-2.5 rounded-full hover:bg-brand-purple transition-colors shadow-lg shadow-brand-purple/20"
+                  data-hover="true"
+              >
+                FALE COMIGO
+              </button>
+            </div>
+
+            {/* Mobile Toggle */}
+            <div className="md:hidden flex items-center">
+              <button 
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
+                className="text-brand-dark dark:text-white p-1 bg-gray-100 dark:bg-white/10 rounded-full"
+              >
+                {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
           </div>
         </div>
       </motion.nav>
@@ -123,13 +136,13 @@ const Navbar: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-white/95 backdrop-blur-xl z-[40] flex flex-col items-center justify-center space-y-8"
+            className="fixed inset-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl z-[40] flex flex-col items-center justify-center space-y-8"
           >
             {navItems.map((item) => (
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.id)}
-                className="text-3xl font-display font-bold text-gray-800 hover:text-brand-purple transition-colors"
+                className="text-3xl font-display font-bold text-gray-800 dark:text-gray-100 hover:text-brand-purple transition-colors"
               >
                 {item.name}
               </button>

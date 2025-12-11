@@ -15,15 +15,15 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-tech-silver">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-tech-silver dark:bg-tech-dark transition-colors duration-500">
       
       {/* Background Elements */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-         <div className="absolute -top-[30%] -right-[10%] w-[700px] h-[700px] bg-brand-purple/5 rounded-full blur-[100px]"></div>
-         <div className="absolute top-[20%] -left-[10%] w-[500px] h-[500px] bg-blue-400/5 rounded-full blur-[100px]"></div>
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+         <div className="absolute -top-[30%] -right-[10%] w-[700px] h-[700px] bg-brand-purple/5 dark:bg-brand-purple/10 rounded-full blur-[100px]"></div>
+         <div className="absolute top-[20%] -left-[10%] w-[500px] h-[500px] bg-blue-400/5 dark:bg-blue-500/10 rounded-full blur-[100px]"></div>
          {/* Grid Pattern */}
          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-soft-light"></div>
-         <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, #cbd5e1 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
+         <div className="absolute inset-0 dark:opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, #cbd5e1 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
       </div>
 
       <div className="container mx-auto px-6 z-10 relative">
@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="mb-6"
           >
-            <span className="inline-block py-1 px-3 rounded-full bg-brand-purple/10 text-brand-purple font-bold text-sm tracking-wider border border-brand-purple/20">
+            <span className="inline-block py-1 px-3 rounded-full bg-brand-purple/10 border border-brand-purple/20 text-brand-purple dark:bg-brand-purple/20 dark:text-brand-light font-bold text-sm tracking-wider">
               TRANSFORMAÇÃO DIGITAL
             </span>
           </motion.div>
@@ -43,7 +43,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 1 }}
-            className="text-5xl md:text-7xl font-display font-black text-brand-dark mb-6 leading-[1.1]"
+            className="text-5xl md:text-7xl font-display font-black text-brand-dark dark:text-white mb-6 leading-[1.1]"
           >
             ELEVE O NÍVEL DO <br />
             <span className="text-gradient">SEU NEGÓCIO</span>
@@ -53,9 +53,9 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="text-lg md:text-2xl text-gray-600 mb-10 max-w-2xl font-light leading-relaxed"
+            className="text-lg md:text-2xl text-gray-600 dark:text-gray-300 mb-10 max-w-2xl font-light leading-relaxed"
           >
-            Não basta estar online. Você precisa de uma <strong className="text-brand-dark">presença digital magnética</strong> que converta visitantes em clientes fiéis.
+            Não basta estar online. Você precisa de uma <strong className="text-brand-dark dark:text-white">presença digital magnética</strong> que converta visitantes em clientes fiéis.
           </motion.p>
 
           <motion.div
@@ -83,7 +83,7 @@ const Hero: React.FC = () => {
               onClick={handleScrollToProjects}
               onMouseEnter={() => setRobotState('pointing')}
               onMouseLeave={() => setRobotState('idle')}
-              className="px-8 py-4 bg-white border border-gray-200 text-brand-dark font-bold rounded-lg hover:border-brand-purple hover:text-brand-purple transition-all shadow-sm hover:shadow-md flex items-center gap-2"
+              className="px-8 py-4 bg-white dark:bg-transparent border border-gray-200 dark:border-gray-700 text-brand-dark dark:text-white font-bold rounded-lg hover:border-brand-purple hover:text-brand-purple dark:hover:border-brand-light dark:hover:text-brand-light transition-all shadow-sm hover:shadow-md flex items-center gap-2"
               data-hover="true"
             >
               Ver Portfolio <ArrowRight size={18} />
