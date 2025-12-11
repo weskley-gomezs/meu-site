@@ -4,6 +4,19 @@ import { ExternalLink, Layers, ArrowRight, Loader2 } from 'lucide-react';
 import { Project } from '../types';
 import { useRobot } from '../App';
 
+// ==========================================
+// ÁREA DE CONFIGURAÇÃO DE IMAGENS
+// Cole aqui os links das suas fotos pessoais
+// ==========================================
+const IMAGENS_PROJETOS = {
+  // Projeto 1: Advocracia
+  // Dica: Você pode hospedar a imagem no GitHub ou Imgur e colar o link aqui
+  advocracia: "https://www.direitoprofissional.com/wp-content/uploads/2019/07/288957-fernanda-entregar-ate-dia-2904-futuro-da-advocacia-saiba-o-que-esperar-e-como-se-preparar.jpg",
+  
+  // Projeto 2: Estética
+  estetica: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2070&auto=format&fit=crop",
+};
+
 const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, index }) => {
   const { setRobotState } = useRobot();
   const [progress, setProgress] = useState(0);
@@ -116,10 +129,10 @@ const Projects: React.FC = () => {
     {
       title: "Advocracia",
       description: "Landing page de alta autoridade para advogados. Design sóbrio e elegante que transmite confiança imediata.",
-      link: "https://weskley-gomezs.github.io/advocracia/",
+      link: "https://advocracia.vercel.app/",
       repo: "weskley-gomezs/advocracia",
       status: 'live',
-      image: "https://www.direitoprofissional.com/wp-content/uploads/2019/07/288957-fernanda-entregar-ate-dia-2904-futuro-da-advocacia-saiba-o-que-esperar-e-como-se-preparar.jpg"
+      image: IMAGENS_PROJETOS.advocracia
     },
     {
       title: "Estética Premium",
@@ -127,7 +140,7 @@ const Projects: React.FC = () => {
       link: "https://weskley-gomezs.github.io/estetica/",
       repo: "weskley-gomezs/estetica",
       status: 'live',
-      image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2070&auto=format&fit=crop"
+      image: IMAGENS_PROJETOS.estetica
     },
     {
       title: "Dashboard SaaS",
