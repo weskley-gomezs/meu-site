@@ -137,7 +137,7 @@ const Projects: React.FC = () => {
     {
       title: "Estética Premium",
       description: "Site para clínica de estética focado em agendamento. Visual clean com fotos inspiradoras.",
-      link: "https://weskley-gomezs.github.io/estetica/",
+      link: "https://estetica-dusky.vercel.app",
       repo: "weskley-gomezs/estetica",
       status: 'live',
       image: IMAGENS_PROJETOS.estetica
